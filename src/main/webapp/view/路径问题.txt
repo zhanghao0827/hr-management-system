@@ -1,0 +1,19 @@
+相对路径：
+    在view目录下的html  请求userServlet?action=query
+    由于相对于view目录
+    会自动变成  /view/userServlet?action=query
+绝对路径不变
+
+而web.xml的url-pattern为/userServlet，即代表：localhost:8080/userServlet，会访问不到
+
+解决：
+    web.xml的url-pattern=/view/userServlet  即代表：localhost:8080/view/userServlet，可以访问
+
+在login.html中：form action="view/userServlet"
+
+由于login.html就在根目录下，相对于根目录，如果form action="userServlet"，即localhost:8080/userServlet
+但是正确为：localhost:8080/view/userServlet，访问不到
+解决：
+    在login.html中：form action="view/userServlet"
+
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3 id="tip" style="text-align: center;color: red"></h3>
+<center>
+    <img src="images/noPermission.jpg">
+</center>
+
+<script src="js/jquery-1.11.0.js"></script>
+<script>
+    var i = 5;
+    var timer = setInterval(function () {
+        $('#tip').html(i + "秒后跳转到登录页面......");
+        i--;
+        if (i == 0) {
+            clearInterval(timer);
+            location.href = "/login.jsp";
+        }
+    }, 1000);
+</script>
+</body>
+</html>
